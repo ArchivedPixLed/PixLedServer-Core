@@ -1,0 +1,17 @@
+plugins {
+    id 'java'
+}
+
+group 'com.pixled'
+version '0.2-SNAPSHOT'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+    implementation 'javax.persistence:javax.persistence-api:2.2'
+}
