@@ -20,6 +20,11 @@ public class DeviceState extends State {
         color = new Color(0F, 0F, 1F, -1);
     }
 
+    public DeviceState(DeviceStateDto deviceStateDto) {
+        connected = deviceStateDto.isConnected();
+        color = new Color(deviceStateDto.getColor());
+    }
+
     public boolean isConnected() {
         return connected;
     }

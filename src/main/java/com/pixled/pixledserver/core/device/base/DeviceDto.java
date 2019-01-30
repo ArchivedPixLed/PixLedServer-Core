@@ -65,7 +65,7 @@ public abstract class DeviceDto {
         this.deviceGroups = deviceGroupIds;
     }
 
-    public StateDto getState() {
+    public DeviceStateDto getState() {
         return state;
     }
 

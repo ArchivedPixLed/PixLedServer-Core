@@ -39,6 +39,12 @@ public class DeviceGroup {
         deviceGroupState = new DeviceGroupState();
     }
 
+    public DeviceGroup(DeviceGroupDto deviceGroupDto) {
+        name = deviceGroupDto.getName();
+        devices = new ArrayList<>();
+        deviceGroupState = new DeviceGroupState(deviceGroupDto.getState());
+    }
+
 
     public Integer getId() {
         return id;

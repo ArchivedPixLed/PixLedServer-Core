@@ -10,4 +10,8 @@ public class DeviceGroupState extends State {
     public DeviceGroupState(){
         super();
     }
+
+    public DeviceGroupState(DeviceGroupStateDto deviceGroupStateDto) {
+        super(deviceGroupStateDto);
+    }
 }

@@ -7,7 +7,7 @@ public class Color {
 
     @Id
     @GeneratedValue
-    private Long id;
+    private Integer id;
 
     @Column
     private Float hue;
@@ -32,11 +32,17 @@ public class Color {
         this.argb = argb;
     }
 
-    public Long getId() {
+    public Color(ColorDto colorDto) {
+        hue = colorDto.getHue();
+        saturation = colorDto.getSaturation();
+        value = colorDto.getValue();
+    }
+
+    public Integer getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 

@@ -20,6 +20,11 @@ public class Strip extends Device {
         this.length = length;
     }
 
+    public Strip(StripDto stripDto) {
+        super(stripDto);
+        length = stripDto.getLength();
+    }
+
     public Integer getLength() {
         return length;
     }
