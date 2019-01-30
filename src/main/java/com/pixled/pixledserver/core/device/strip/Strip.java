@@ -1,6 +1,7 @@
 package com.pixled.pixledserver.core.device.strip;
 
 import com.pixled.pixledserver.core.device.base.Device;
+import com.pixled.pixledserver.core.device.base.DeviceDto;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -33,4 +34,8 @@ public class Strip extends Device {
         this.length = length;
     }
 
+    @Override
+    public DeviceDto generateDto() {
+        return new StripDto(this);
+    }
 }

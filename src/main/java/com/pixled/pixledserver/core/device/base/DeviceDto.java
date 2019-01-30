@@ -77,4 +77,5 @@ public abstract class DeviceDto {
         state = deviceStateDto;
     }
 
+    public abstract Device generateDevice();
 }

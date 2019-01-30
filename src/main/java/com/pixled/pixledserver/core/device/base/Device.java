@@ -72,4 +72,6 @@ public abstract class Device {
             deviceGroup.updateStatus();
         }
     }
+
+    public abstract DeviceDto generateDto();
 }
