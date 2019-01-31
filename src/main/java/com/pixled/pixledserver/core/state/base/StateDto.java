@@ -6,24 +6,24 @@ import com.pixled.pixledserver.core.ToggleState;
 
 public class StateDto {
 
-    private ToggleState toggleState;
+    private ToggleState toggle;
 
     @JsonCreator
     public StateDto(
             @JsonProperty("toggle") String toggle
     ){
-        this.toggleState = toggle.equals("ON") ? ToggleState.ON : ToggleState.OFF;
+        this.toggle = toggle.equals("ON") ? ToggleState.ON : ToggleState.OFF;
     }
 
     public StateDto(State state) {
-        toggleState = state.getToggleState();
+        toggle = state.getToggleState();
     }
 
     public ToggleState getToggleState() {
-        return toggleState;
+        return toggle;
     }
 
     public void setToggleState(ToggleState toggleState) {
-        this.toggleState = toggleState;
+        this.toggle = toggleState;
     }
 }
