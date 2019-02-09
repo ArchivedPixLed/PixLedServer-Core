@@ -26,7 +26,7 @@ public class ColorDto {
         this.argb = argb;
     }
 
-    private ColorDto(Color color) {
+    public ColorDto(Color color) {
         this.hue = color.getHue();
         this.saturation = color.getSaturation();
         this.value = color.getValue();

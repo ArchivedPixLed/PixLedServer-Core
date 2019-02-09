@@ -40,8 +40,9 @@ public class DeviceGroup {
     }
 
     public DeviceGroup(DeviceGroupDto deviceGroupDto) {
+        id = deviceGroupDto.getId();
         name = deviceGroupDto.getName();
-        devices = new ArrayList<>();
+        // devices = new ArrayList<>(); // Not sure : from server side, instantiated with JPA?
         deviceGroupState = new DeviceGroupState(deviceGroupDto.getState());
     }
 

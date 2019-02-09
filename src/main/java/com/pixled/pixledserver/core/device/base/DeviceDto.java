@@ -2,6 +2,10 @@ package com.pixled.pixledserver.core.device.base;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonSubTypes;
+import com.fasterxml.jackson.annotation.JsonTypeInfo;
+import com.pixled.pixledserver.core.device.strip.Strip;
+import com.pixled.pixledserver.core.device.strip.StripDto;
 import com.pixled.pixledserver.core.group.DeviceGroup;
 import com.pixled.pixledserver.core.state.base.StateDto;
 import com.pixled.pixledserver.core.state.device.DeviceStateDto;
@@ -9,6 +13,12 @@ import com.pixled.pixledserver.core.state.device.DeviceStateDto;
 import java.util.ArrayList;
 import java.util.List;
 
+@JsonTypeInfo(
+        use = JsonTypeInfo.Id.NAME,
+        property = "type")
+@JsonSubTypes({
+        @JsonSubTypes.Type(value = StripDto.class, name = "strip")
+})
 public abstract class DeviceDto {
     private Integer id;
     private String name;
@@ -32,10 +42,10 @@ public abstract class DeviceDto {
     }
 
     public DeviceDto(Device device) {
-        deviceGroups = new ArrayList<>();
         id = device.getId();
         name = device.getName();
         state = new DeviceStateDto(device.getDeviceState());
+        deviceGroups = new ArrayList<>();
         for (DeviceGroup deviceGroup : device.getDeviceGroups()) {
             deviceGroups.add(deviceGroup.getId());
         }

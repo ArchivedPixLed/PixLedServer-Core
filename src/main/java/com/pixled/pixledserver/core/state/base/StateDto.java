@@ -19,11 +19,11 @@ public class StateDto {
         toggle = state.getToggleState();
     }
 
-    public ToggleState getToggleState() {
+    public ToggleState getToggle() {
         return toggle;
     }
 
-    public void setToggleState(ToggleState toggleState) {
-        this.toggle = toggleState;
+    public void setToggle(ToggleState toggle) {
+        this.toggle = toggle;
     }
 }

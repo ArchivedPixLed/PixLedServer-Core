@@ -7,6 +7,7 @@ import com.pixled.pixledserver.core.state.device.DeviceState;
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 @Entity
 @Inheritance(strategy = InheritanceType.JOINED)
@@ -34,7 +35,7 @@ public abstract class Device {
     public Device(DeviceDto deviceDto) {
         id = deviceDto.getId();
         name = deviceDto.getName();
-        deviceGroups = new ArrayList<>();
+        // deviceGroups = new ArrayList<>(); // Not sure : from server side, auto instantiated with JPA?
         deviceState = new DeviceState(deviceDto.getState());
     }
 
@@ -74,4 +75,17 @@ public abstract class Device {
     }
 
     public abstract DeviceDto generateDto();
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Device device = (Device) o;
+        return id.equals(device.getId());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id);
+    }
 }

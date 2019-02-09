@@ -18,7 +18,7 @@ public abstract class State {
     }
 
     public State(StateDto stateDto) {
-        toggleState = stateDto.getToggleState();
+        toggleState = stateDto.getToggle();
     }
 
     public Integer getId() {

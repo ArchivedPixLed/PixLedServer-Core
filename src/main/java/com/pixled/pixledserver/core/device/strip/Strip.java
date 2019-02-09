@@ -35,7 +35,7 @@ public class Strip extends Device {
     }
 
     @Override
-    public DeviceDto generateDto() {
+    public StripDto generateDto() {
         return new StripDto(this);
     }
 }

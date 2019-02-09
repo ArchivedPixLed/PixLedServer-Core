@@ -1,3 +1,5 @@
 out/
+build/classes
+build/tmp
 .idea
 .gradle
