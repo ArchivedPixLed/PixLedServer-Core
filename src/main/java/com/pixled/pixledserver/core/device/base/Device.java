@@ -35,7 +35,6 @@ public abstract class Device {
     public Device(DeviceDto deviceDto) {
         id = deviceDto.getId();
         name = deviceDto.getName();
-        // deviceGroups = new ArrayList<>(); // Not sure : from server side, auto instantiated with JPA?
         deviceState = new DeviceState(deviceDto.getState());
     }
 

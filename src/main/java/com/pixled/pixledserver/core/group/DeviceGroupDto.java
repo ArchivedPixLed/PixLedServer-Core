@@ -3,6 +3,7 @@ package com.pixled.pixledserver.core.group;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.pixled.pixledserver.core.device.base.Device;
+import com.pixled.pixledserver.core.device.base.DeviceDto;
 import com.pixled.pixledserver.core.state.deviceGroup.DeviceGroupStateDto;
 
 import java.util.ArrayList;

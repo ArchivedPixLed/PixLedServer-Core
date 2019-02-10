@@ -2,6 +2,7 @@ package com.pixled.pixledserver.core.group;
 
 import com.pixled.pixledserver.core.ToggleState;
 import com.pixled.pixledserver.core.device.base.Device;
+import com.pixled.pixledserver.core.device.base.DeviceDto;
 import com.pixled.pixledserver.core.state.deviceGroup.DeviceGroupState;
 
 import javax.persistence.*;
@@ -30,19 +31,18 @@ public class DeviceGroup {
     private DeviceGroupState deviceGroupState;
 
     public DeviceGroup() {
-        super();
+        devices = new ArrayList<>();
+        deviceGroupState = new DeviceGroupState();
     }
 
     public DeviceGroup(String name) {
+        this();
         this.name = name;
-        devices = new ArrayList<>();
-        deviceGroupState = new DeviceGroupState();
     }
 
     public DeviceGroup(DeviceGroupDto deviceGroupDto) {
         id = deviceGroupDto.getId();
         name = deviceGroupDto.getName();
-        // devices = new ArrayList<>(); // Not sure : from server side, instantiated with JPA?
         deviceGroupState = new DeviceGroupState(deviceGroupDto.getState());
     }
 
