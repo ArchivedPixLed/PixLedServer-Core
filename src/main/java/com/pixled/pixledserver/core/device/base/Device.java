@@ -32,6 +32,11 @@ public abstract class Device {
         deviceState = new DeviceState();
     }
 
+    public Device(String name) {
+        this();
+        this.name = name;
+    }
+
     public Device(DeviceDto deviceDto) {
         id = deviceDto.getId();
         name = deviceDto.getName();
@@ -56,6 +61,10 @@ public abstract class Device {
 
     public List<DeviceGroup> getDeviceGroups() {
         return deviceGroups;
+    }
+
+    public void setDeviceGroups(List<DeviceGroup> deviceGroups) {
+        this.deviceGroups = deviceGroups;
     }
 
     public DeviceState getDeviceState() {

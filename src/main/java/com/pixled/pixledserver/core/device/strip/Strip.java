@@ -16,8 +16,8 @@ public class Strip extends Device {
         super();
     }
 
-    public Strip(Integer length) {
-        super();
+    public Strip(String name, Integer length) {
+        super(name);
         this.length = length;
     }
 

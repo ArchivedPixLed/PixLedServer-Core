@@ -96,5 +96,10 @@ public class DeviceGroup {
         for (Device device : devices) {
             device.getDeviceState().setToggleState(deviceGroupState.getToggleState());
         }
+        for (Device device : devices) {
+            for (DeviceGroup deviceGroup : device.getDeviceGroups()) {
+                deviceGroup.updateStatus();
+            }
+        }
     }
 }
