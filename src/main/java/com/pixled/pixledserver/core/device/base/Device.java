@@ -38,6 +38,7 @@ public abstract class Device {
     }
 
     public Device(DeviceDto deviceDto) {
+        deviceGroups = new ArrayList<>();
         id = deviceDto.getId();
         name = deviceDto.getName();
         deviceState = new DeviceState(deviceDto.getState());

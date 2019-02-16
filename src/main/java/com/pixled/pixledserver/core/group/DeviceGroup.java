@@ -9,6 +9,8 @@ import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
+import static javax.persistence.CascadeType.*;
+
 @Entity
 public class DeviceGroup {
 
@@ -19,7 +21,7 @@ public class DeviceGroup {
     @Column(nullable = false)
     private String name;
 
-    @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @ManyToMany(fetch = FetchType.EAGER, cascade={MERGE, REMOVE, REFRESH, DETACH})
     @JoinTable(
             name = "device_group_composition",
             joinColumns = { @JoinColumn(name = "group_id") },
@@ -41,6 +43,7 @@ public class DeviceGroup {
     }
 
     public DeviceGroup(DeviceGroupDto deviceGroupDto) {
+        devices = new ArrayList<>();
         id = deviceGroupDto.getId();
         name = deviceGroupDto.getName();
         deviceGroupState = new DeviceGroupState(deviceGroupDto.getState());

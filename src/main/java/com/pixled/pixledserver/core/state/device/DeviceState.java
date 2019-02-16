@@ -21,6 +21,7 @@ public class DeviceState extends State {
     }
 
     public DeviceState(DeviceStateDto deviceStateDto) {
+        super(deviceStateDto);
         connected = deviceStateDto.isConnected();
         color = new Color(deviceStateDto.getColor());
     }
