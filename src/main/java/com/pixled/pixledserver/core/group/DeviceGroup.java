@@ -21,7 +21,7 @@ public class DeviceGroup {
     @Column(nullable = false)
     private String name;
 
-    @ManyToMany(fetch = FetchType.EAGER, cascade={MERGE, REMOVE, REFRESH, DETACH})
+    @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(
             name = "device_group_composition",
             joinColumns = { @JoinColumn(name = "group_id") },

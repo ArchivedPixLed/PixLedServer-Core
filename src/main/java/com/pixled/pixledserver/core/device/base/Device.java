@@ -20,7 +20,7 @@ public abstract class Device {
     @Column
     private String name;
 
-    @ManyToMany(fetch = FetchType.EAGER, mappedBy = "devices", cascade = CascadeType.ALL)
+    @ManyToMany(fetch = FetchType.EAGER, mappedBy = "devices")
     private List<DeviceGroup> deviceGroups;
 
     @OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
