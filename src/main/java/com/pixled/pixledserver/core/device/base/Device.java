@@ -41,7 +41,13 @@ public abstract class Device {
         deviceGroups = new ArrayList<>();
         id = deviceDto.getId();
         name = deviceDto.getName();
-        deviceState = new DeviceState(deviceDto.getState());
+        if(deviceDto.getState() != null) {
+            deviceState = new DeviceState(deviceDto.getState());
+        }
+        else {
+            // For example, in the case of a newly created device.
+            deviceState = new DeviceState();
+        }
     }
 
     public Integer getId() {
