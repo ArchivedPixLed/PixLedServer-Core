@@ -3,7 +3,7 @@ plugins {
 }
 
 group 'com.pixled'
-version '0.2-SNAPSHOT'
+version '1.0-SNAPSHOT'
 
 sourceCompatibility = 1.8
 
